@@ -5,7 +5,8 @@
 ## Makefile for the project
 ##
 
-SRC =		main.c \
+SRC =		src/main.c \
+		src/init_structs.c
 
 OBJ =		$(SRC:%.c=%.o)
 

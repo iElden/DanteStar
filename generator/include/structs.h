@@ -18,6 +18,7 @@ typedef struct maze Maze;
 struct maze {
 	short *ar;
 	Coord max;
+	Coord real;
 };
 
 #endif

@@ -16,5 +16,7 @@
 #define		ERR -1
 #define		 OK 0
 #define		NULL_PTR ": String pointer is NULL"
+#define EXIT_ERROR (84)
+
 
 #endif //DANTESTAR_MACRO_H
