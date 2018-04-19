@@ -5,7 +5,7 @@
 ## Makefile for the project
 ##
 
-SRC =		src/main.c \
+SRC =		main.c \
 
 OBJ =		$(SRC:%.c=%.o)
 
