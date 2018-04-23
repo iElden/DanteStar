@@ -17,6 +17,7 @@ struct coord {
 typedef struct maze Maze;
 struct maze {
 	short *ar;
+	bool *is_checked;
 	Coord max;
 	Coord real;
 };
