@@ -6,7 +6,9 @@
 ##
 
 SRC =		src/main.c \
-		src/init_structs.c
+		src/init_structs.c \
+		src/error_handling.c \
+		src/display.c
 
 OBJ =		$(SRC:%.c=%.o)
 
