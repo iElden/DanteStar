@@ -9,7 +9,7 @@
 #include "macro.h"
 #include <stdbool.h>
 
-// dig que dans une seule direction
+
 void dig(Maze *maze, int coord, char direction)
 {
 	if(!IS_DIGGED(maze->ar[coord], direction))
