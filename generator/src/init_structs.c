@@ -18,8 +18,8 @@ int destroy(Maze *maze)
 
 bool init_struct(Maze *maze, char **av)
 {
-	int x = atoi(av[0]);
-	int y = atoi(av[1]);
+	int x = atoi(av[1]);
+	int y = atoi(av[2]);
 
 	maze->real.x = x;
 	maze->real.y = y;

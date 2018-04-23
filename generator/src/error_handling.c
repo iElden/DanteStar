@@ -21,7 +21,7 @@ bool my_str_is_num(char *str)
 	return true;
 }
 
-bool error_handling(int ac, char **av)
+bool error_handling(int ac)
 {
 	if (ac != 3)
 		return false;
