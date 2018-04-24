@@ -25,9 +25,6 @@ CC =		gcc
 
 all :		$(NAME)
 
-$(LIBMY) :
-	make -C lib/my/
-
 $(NAME) :	$(OBJ)
 		$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
@@ -38,3 +35,6 @@ fclean :	clean
 		rm -f $(NAME)
 
 re :		fclean all
+
+dbg:		CFLAGS += -g -O0
+dbg:		fclean all

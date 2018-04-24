@@ -19,13 +19,13 @@ void create_maze(Maze *maze)
 	while (true) {
 		direction = get_random_direction(maze, head);
 		if (direction) {
-			dig(maze, head, direction);
+			dig(maze, head, direction, true);
 			head = move_head(maze, head, direction);
 			continue;
 		}
 		head = find_new_room(maze, &direction);
 		if (head == -1)
 			return;
-		dig(maze, head, direction);
+		dig(maze, head, direction, true);
 	}
 }

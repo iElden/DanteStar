@@ -8,6 +8,8 @@
 #include "structs.h"
 #include "macro.h"
 #include "functions.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 char *_display_base_map(Maze *maze)
 {
