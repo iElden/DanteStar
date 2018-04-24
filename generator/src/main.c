@@ -12,7 +12,7 @@
 
 void print_dbg(Maze *maze)
 {
-	printf("---- MAZE ----\n");
+	printf("\n---- MAZE ----\n");
 	printf("Max {x:%i ; y:%i}\n",maze->max.x, maze->max.y);
 	printf("Real{x:%i : y:%i}\n",maze->real.x, maze->real.y);
 	for (int i = 0; i < maze->max.x * maze->max.y; i++) {
