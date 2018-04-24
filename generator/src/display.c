@@ -12,6 +12,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void place_even_walls(Maze *maze, char *str)
+{
+	int real = maze->real.x;
+	int lb_pos = (maze->real.x) * (maze->real.y);
+
+	for (int i = real - 1; i <= lb_pos; i += maze->real.x + 1) {
+		if (i % 2 == 0)
+			str[i] = 'o';
+		if (i % 2 == 1)
+			str[i] = '*';
+	}
+}
+
+void place_bottom(char *str, Maze *maze)
+{
+	int size = (maze->real.x + 1) * maze->real.y;
+	for (int i = size - maze->real.y - 1; i < size - 2; i++) {
+		if (i % 2 == 0)
+			str[i] = 'o';
+		else
+			str[i] = '*';
+	}
+}
+
 void display_map(Maze *maze)
 {
 	int size = (maze->real.x + 1) * (maze->real.y);
@@ -25,15 +49,22 @@ void display_map(Maze *maze)
 	memset(str, 'o', (size - 1));
 	for (int i = real; i <= lb_pos; i += maze->real.x + 1)
 			str[i] = '\n';
-	for (int i = 0; i <= lb_pos; i += 2) {
+	for (int i = 0; i <= lb_pos + maze->max.x + 1; i += 2) {
 		if ((i % ((real + 1) * 2)) / real)
 			continue;
-		str[i] = '.';
+		str[i] = '*';
 		if (IS_DIGGED(maze->ar[j], RIGHT))
-			str[i + 1] = '.';
+			str[i + 1] = '*';
 		if (IS_DIGGED(maze->ar[j], BOT))
-			str[i + real + 1] = '.';
+			str[i + real + 1] = '*';
 		++j;
 	}
-	printf("%s", str);
+	if (maze->real.x % 2 == 0)
+		place_even_walls(maze, str);
+	if (maze->real.y % 2 == 0)
+		place_bottom(str, maze);
+	if (!(maze->real.x % 2) && !(maze->real.y % 2))
+		str[size - 3] = 'o';
+	str[size - 2] = '*';
+	printf("%s\n", str);
 }
