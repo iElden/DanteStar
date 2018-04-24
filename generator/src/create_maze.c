@@ -11,15 +11,15 @@
 int move_head(Maze *maze, int head, char direction)
 {
 	switch(direction) {
-	case (TOP):
-		return (head - maze->max.x);
-	case (LEFT):
-		return (head - 1);
-	case (RIGHT)
-		return (head + 1);
-	case (BOT)
-		return (head + maze->max.x);
-	}
+		case (TOP):
+			return (head - maze->max.x);
+		case (LEFT):
+			return (head - 1);
+		case (RIGHT):
+			return (head + 1);
+		case (BOT):
+			return (head + maze->max.x);
+		}
 	return (-1);
 }
 

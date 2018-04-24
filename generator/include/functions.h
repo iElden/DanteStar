@@ -17,6 +17,6 @@
 
 bool error_handling(int ac, char **av);
 bool init_struct(Maze *maze, char **av);
-char *convert(Maze *maze);
+char *display_base_map(Maze *maze);
 
 #endif
