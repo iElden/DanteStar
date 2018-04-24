@@ -23,19 +23,17 @@ void display_map(Maze *maze)
 	if (str == NULL)
 		return;
 	memset(str, 'o', (size - 1));
-	for (int i = real; i < lb_pos; i += maze->real.x + 1)
+	for (int i = real; i <= lb_pos; i += maze->real.x + 1)
 			str[i] = '\n';
-	for (int i = 0; i < lb_pos; i += 2) {
+	for (int i = 0; i <= lb_pos; i += 2) {
 		if ((i % ((real + 1) * 2)) / real)
 			continue;
-		str[i] = '*';
-	}
-	for (int i = 0; i < size; ++i) {
+		str[i] = '.';
 		if (IS_DIGGED(maze->ar[j], RIGHT))
-			str[i + 1] = 'X';
+			str[i + 1] = '.';
 		if (IS_DIGGED(maze->ar[j], BOT))
-			str[i + real + 1] = 'X';
+			str[i + real + 1] = '.';
 		++j;
 	}
-	printf("map :\n\n%s\n", str);
+	printf("%s", str);
 }
