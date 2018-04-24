@@ -32,14 +32,19 @@ int find_new_room(Maze *maze, char *direction)
 {
 	static int start = 0;
 
+	print_dbg(maze);
+	printf("\n=== HUNT ===\n");
 	for (int i = start; i < maze->max.x * maze->max.y; i++) {
 		if (i == start && maze->ar[i])
 			start++;
+		printf("scan room : %i (%i)\n", i, maze->ar[i]);
 		if (maze->ar[i])
 			continue;
-		*direction = get_random_direction(maze, i);
+		*direction = get_random_room(maze, i);
+		printf("get direction : %i\n",*direction);
 		if (*direction)
 			return (i);
 	}
+	printf("NO EMPTY ROOM FOUND !\n");
 	return (-1);
 }
