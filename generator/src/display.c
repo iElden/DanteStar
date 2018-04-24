@@ -29,12 +29,10 @@ void display_map(Maze *maze)
 		if ((i % ((real + 1) * 2)) / real)
 			continue;
 		str[i] = '*';
-	}
-	for (int i = 0; i < size; ++i) {
 		if (IS_DIGGED(maze->ar[j], RIGHT))
-			str[i + 1] = 'X';
+			str[i + 1] = '*';
 		if (IS_DIGGED(maze->ar[j], BOT))
-			str[i + real + 1] = 'X';
+			str[i + real + 1] = '*';
 		++j;
 	}
 	printf("map :\n\n%s\n", str);

@@ -31,6 +31,7 @@ int main(int ac, char **av)
 	if (!init_struct(&maze, av))
 		return (EXIT_ERROR);
 	create_maze(&maze);
-	print_dbg(&maze);
+//	print_dbg(&maze);
+	display_map(&maze);
 	return (0);
 }
