@@ -8,7 +8,11 @@
 SRC =		src/main.c \
 		src/init_structs.c \
 		src/error_handling.c \
-		src/display.c
+		src/display.c \
+		src/coord.c \
+		src/create_maze.c \
+		src/dig.c \
+		src/find.c \
 
 OBJ =		$(SRC:%.c=%.o)
 
