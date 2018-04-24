@@ -19,7 +19,7 @@ INC =		-I ./include
 
 CFLAGS =	$(INC) -W -Wall -Wextra -Wshadow -g
 
-NAME =		dante_star
+NAME =		generator
 
 CC =		gcc
 
