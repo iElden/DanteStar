@@ -6,6 +6,7 @@
 */
 
 #include <stdbool.h>
+#include <string.h>
 #include <stdlib.h>
 #include "structs.h"
 #include "macro.h"
@@ -28,7 +29,7 @@ bool init_struct(Maze *maze, char **av)
 	maze->max.x = x;
 	maze->max.y = y;
 	maze->ar = malloc(x * y * sizeof(short));
-	maze->is_checked(x * y * sizeof(bool));
+	maze->is_checked = malloc(x * y * sizeof(bool));
 	if (!maze->ar || !maze->is_checked)
 		return (false);
 	memset(maze->ar, 0, x * y * sizeof(short));

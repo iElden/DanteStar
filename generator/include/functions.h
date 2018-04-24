@@ -17,6 +17,11 @@
 
 bool error_handling(int ac, char **av);
 bool init_struct(Maze *maze, char **av);
-char *convert(Maze *maze);
+char *display_base_map(Maze *maze);
+void create_maze(Maze *maze);
+void dig(Maze *maze, int head, char direction);
+int move_head(Maze *maze, int head, char direction);
+int find_new_room(Maze *maze, char *direction);
+char get_random_direction(Maze *maze, int head);
 
 #endif

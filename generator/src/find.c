@@ -5,9 +5,11 @@
 ** hunt
 */
 
-#include "struct.h"
+#include "structs.h"
 #include "macro.h"
+#include "functions.h"
 #include <stdbool.h>
+#include <stdlib.h>
 
 int find_new_room(Maze *maze, char *direction)
 {
@@ -18,7 +20,7 @@ int find_new_room(Maze *maze, char *direction)
 			start++;
 		if (maze->ar[i])
 			continue;
-		*direction = get_random_pos(maze, i);
+		*direction = get_random_direction(maze, i);
 		if (*direction)
 			return (i);
 	}

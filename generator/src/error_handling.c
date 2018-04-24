@@ -21,10 +21,13 @@ bool my_str_is_num(char *str)
 	return true;
 }
 
-bool error_handling(int ac)
+bool error_handling(int ac, char **av)
 {
 	if (ac != 3)
 		return false;
-
+	for (int i = 1; i < ac; ++i) {
+		if (!my_str_is_num(av[i]))
+			return false;
+	}
 	return true;
 }

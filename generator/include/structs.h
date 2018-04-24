@@ -8,6 +8,8 @@
 #ifndef __STRUCTS_H__
 #define __STRUCTS_H__
 
+#include <stdbool.h>
+
 typedef struct coord Coord;
 struct coord {
 	int x;

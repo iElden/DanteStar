@@ -7,6 +7,7 @@
 
 #include "structs.h"
 #include "macro.h"
+#include <stdlib.h>
 
 int move_head(Maze *maze, int head, char direction)
 {
@@ -15,15 +16,15 @@ int move_head(Maze *maze, int head, char direction)
 		return (head - maze->max.x);
 	case (LEFT):
 		return (head - 1);
-	case (RIGHT)
+	case (RIGHT):
 		return (head + 1);
-	case (BOT)
+	case (BOT):
 		return (head + maze->max.x);
 	}
 	return (-1);
 }
 
-char get_random_pos(Maze *maze, int head)
+char get_random_direction(Maze *maze, int head)
 {
  	int len = 0;
 	int list[4];
