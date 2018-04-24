@@ -11,6 +11,23 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+char get_random_room(Maze *maze, int head)
+{
+        int len = 0;
+        int list[4];
+        int max_dig_bot = (maze->max.y - 1) * maze->max.x;
+
+        if (head > maze->max.x && maze->ar[head - maze->max.x])
+                list[len++] = TOP;
+        if (head % maze->max.x != 0 && maze->ar[head - 1])
+                list[len++] = LEFT;
+        if ((head + 1) % maze->max.x != 0 && maze->ar[head + 1])
+                list[len++] = RIGHT;
+        if (head < max_dig_bot && maze->ar[head + maze->max.x])
+                list[len++] = BOT;
+        return (len ? list[rand() % len] : 0);
+}
+
 int find_new_room(Maze *maze, char *direction)
 {
 	static int start = 0;
