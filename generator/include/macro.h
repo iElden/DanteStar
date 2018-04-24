@@ -24,6 +24,8 @@
 #define	OK 0
 #define	NULL_PTR ": String pointer is NULL"
 #define	EXIT_ERROR (84)
+#define	ARGS_NUM "Please make sure that all arguments are numbers.\n"
+#define	ARGS_COUNT "Please make sure you have the right count of arguments.\n"
 
 
 #endif //DANTESTAR_MACRO_H

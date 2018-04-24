@@ -5,11 +5,11 @@
 ** maze generator
 */
 
+#include <stdlib.h>
+#include <stdbool.h>
 #include "macro.h"
 #include "structs.h"
 #include "functions.h"
-#include <stdlib.h>
-#include <stdbool.h>
 
 void create_maze(Maze *maze)
 {

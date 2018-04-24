@@ -23,11 +23,15 @@ bool my_str_is_num(char *str)
 
 bool error_handling(int ac, char **av)
 {
-	if (ac != 3)
+	if (ac != 3) {
+		dprintf(2, "%s", ARGS_COUNT);
 		return false;
+	}
 	for (int i = 1; i < ac; ++i) {
-		if (!my_str_is_num(av[i]))
+		if (!my_str_is_num(av[i])) {
+			dprintf(2, "%s", ARGS_NUM);
 			return false;
+			}
 	}
 	return true;
 }
