@@ -32,7 +32,5 @@ int main(int ac, char **av)
 		return (EXIT_ERROR);
 	create_maze(&maze);
 	print_dbg(&maze);
-	str = display_base_map(&maze);
-	printf("map :\n\n%s\n", str);
 	return (0);
 }
