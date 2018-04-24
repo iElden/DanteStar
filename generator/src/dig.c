@@ -41,22 +41,23 @@ char get_random_direction(Maze *maze, int head)
 	return (len ? list[rand() % len] : 0);
 }
 
-void dig(Maze *maze, int coord, char direction)
+void dig(Maze *maze, int coord, char direction, bool b)
 {
 	if(!IS_DIGGED(maze->ar[coord], direction))
 		maze->ar[coord] += direction;
-	switch (direction) {
-	case (TOP):
-		dig(maze, coord - maze->max.x, BOT);
-		break;
-	case (LEFT):
-		dig(maze, coord - 1, RIGHT);
-		break;
-	case (RIGHT):
-		dig(maze, coord + 1, LEFT);
-		break;
-	case (BOT):
-		dig(maze, coord + maze->max.x, TOP);
-		break;
-	}
+	if (b)
+		switch (direction) {
+		case (TOP):
+			dig(maze, coord - maze->max.x, BOT, false);
+			break;
+		case (LEFT):
+			dig(maze, coord - 1, RIGHT, false);
+			break;
+		case (RIGHT):
+			dig(maze, coord + 1, LEFT, false);
+			break;
+		case (BOT):
+			dig(maze, coord + maze->max.x, TOP, false);
+			break;
+		}
 }

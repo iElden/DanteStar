@@ -9,6 +9,8 @@
 #include "structs.h"
 #include "macro.h"
 #include "functions.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 void display_map(Maze *maze)
 {

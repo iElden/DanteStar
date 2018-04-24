@@ -29,11 +29,9 @@ bool init_struct(Maze *maze, char **av)
 	maze->max.x = x;
 	maze->max.y = y;
 	maze->ar = malloc(x * y * sizeof(short));
-	maze->is_checked = malloc(x * y * sizeof(bool));
-	if (!maze->ar || !maze->is_checked)
+	if (!maze->ar)
 		return (false);
 	memset(maze->ar, 0, x * y * sizeof(short));
-	memset(maze->is_checked, false, x * y *sizeof(bool));
 	srand((unsigned long) maze->ar);
 	return (true);
 }
