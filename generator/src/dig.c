@@ -11,7 +11,7 @@
 
 int move_head(Maze *maze, int head, char direction)
 {
-	switch(direction) {
+	switch (direction) {
 	case (TOP):
 		return (head - maze->max.x);
 	case (LEFT):
@@ -26,7 +26,7 @@ int move_head(Maze *maze, int head, char direction)
 
 char get_random_direction(Maze *maze, int head)
 {
- 	int len = 0;
+	int len = 0;
 	int list[4];
 	int max_dig_bot = (maze->max.y - 1) * maze->max.x;
 
@@ -43,7 +43,7 @@ char get_random_direction(Maze *maze, int head)
 
 void dig(Maze *maze, int coord, char direction, bool b)
 {
-	if(!IS_DIGGED(maze->ar[coord], direction))
+	if (!IS_DIGGED(maze->ar[coord], direction))
 		maze->ar[coord] += direction;
 	if (b)
 		switch (direction) {

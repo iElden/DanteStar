@@ -31,7 +31,7 @@ bool error_handling(int ac, char **av)
 		if (!my_str_is_num(av[i])) {
 			dprintf(2, "%s", ARGS_NUM);
 			return false;
-			}
+		}
 	}
 	return true;
 }

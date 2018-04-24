@@ -15,7 +15,7 @@ void create_maze(Maze *maze)
 {
 	int head = rand() % (maze->max.y * maze->max.x);
 	char direction;
-	
+
 	while (true) {
 		direction = get_random_direction(maze, head);
 		if (direction) {
