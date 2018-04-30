@@ -41,11 +41,11 @@ char get_random_direction(Maze *maze, int head)
 	return (len ? list[rand() % len] : 0);
 }
 
-void dig(Maze *maze, int coord, char direction, bool b)
+void dig(Maze *maze, int coord, char direction, bool dig_forward)
 {
 	if (!IS_DIGGED(maze->ar[coord], direction))
 		maze->ar[coord] += direction;
-	if (b)
+	if (dig_forward)
 		switch (direction) {
 		case (TOP):
 			dig(maze, coord - maze->max.x, BOT, false);
