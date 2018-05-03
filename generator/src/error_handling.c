@@ -5,6 +5,7 @@
 ** error_handling.c
 */
 
+#include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "macro.h"
@@ -33,5 +34,7 @@ bool error_handling(int ac, char **av)
 			return false;
 		}
 	}
+	if (!atoi(av[1]) || !atoi(av[1]))
+		return (false);
 	return true;
 }

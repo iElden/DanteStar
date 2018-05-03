@@ -11,6 +11,7 @@
 #include "functions.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void place_even_walls(Maze *maze, char *str)
 {
@@ -28,7 +29,7 @@ void place_even_walls(Maze *maze, char *str)
 void place_bottom(char *str, Maze *maze)
 {
 	int size = (maze->real.x + 1) * maze->real.y;
-	
+
 	for (int i = size - maze->real.x - 1; i < size - 2; i++) {
 		if (i % 2 == 0)
 			str[i] = 'X';
@@ -41,7 +42,7 @@ void fill_maze(Maze *maze, char *str, int lb_pos)
 {
 	int j = 0;
 
-	for (int i = 0; i <= lb_pos + maze->max.x + 1; i += 2) {
+	for (int i = 0; i < lb_pos; i += 2) {
 		if ((i % ((maze->real.x + 1) * 2)) / maze->real.x)
 			continue;
 		str[i] = '*';
@@ -57,20 +58,21 @@ void fill_maze(Maze *maze, char *str, int lb_pos)
 void display_map(Maze *maze)
 {
 	int size = (maze->real.x + 1) * (maze->real.y);
-	char *str = 	malloc(size * sizeof(*str));
-	int lb_pos = (maze->real.x + 1) * (maze->real.y);
+	char *str = malloc(size);
 
 	if (str == NULL)
 		return;
 	memset(str, 'X', (size - 1));
-	for (int i = maze->real.x; i <= lb_pos; i += maze->real.x + 1)
-		str[i] = '\n';
-	fill_maze(maze, str, lb_pos);
+	str[size - 1] = '\0';
+	fill_maze(maze, str, size);
 	if (maze->real.x % 2 == 0)
 		place_even_walls(maze, str);
 	if (maze->real.y % 2 == 0)
-		place_bottom(str, maze); 
-	str[size - 3] = (maze->real.y % 2 == 0) ? 'X' : '*';
+		place_bottom(str, maze);
+	for (int i = maze->real.x; i < size; i += maze->real.x + 1)
+		str[i] = '\n';
+	if (maze->real.x > 1)
+		str[size - 3] = (maze->real.y % 2 == 0) ? 'X' : '*';
 	str[size - 2] = '*';
-	printf("%s\n", str);
+	write(1, str, size - 1);
 }
