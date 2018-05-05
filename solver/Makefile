@@ -5,15 +5,18 @@
 ## Makefile for the project
 ##
 
-SRC =		src/main.c \
+SRC =		main.c \
+		load_file.c \
+		solving.c \
+		parse_file.c
 
-OBJ =		$(SRC:%.c=%.o)
+OBJ =		$(SRC:%.c=src/%.o)
 
 INC =		-I ./include
 
 CFLAGS =	$(INC) -Wall -Wextra -Wshadow
 
-NAME =		generator
+NAME =		solver
 
 CC =		gcc
 
