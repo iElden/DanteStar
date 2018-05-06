@@ -24,7 +24,7 @@ int get_pos(maze_t *maze, int head, char direction)
 	return (-1);
 }
 
-bool can_move(maze_t *maze, int head, char direction)
+bool move(maze_t *maze, int head, char direction)
 {
 	switch (direction) {
 	case RIGHT:
@@ -53,7 +53,7 @@ bool solve(maze_t *maze, int head)
 	if (head == maze->size - 1)
 		return (true);
 	for (char i = 0; i < 4; i++)
-		if (can_move(maze, head, i) && solve(maze, get_pos(maze, head, i)))
+		if (move(maze, head, i) && solve(maze, get_pos(maze, head, i)))
 			return (true);
 	maze->str[head] = '*';
 	return (false);
