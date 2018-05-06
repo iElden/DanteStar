@@ -9,7 +9,7 @@
 #include "structs.h"
 #include "directions.h"
 
-int get_new_pos(maze_t *maze, int head, char direction)
+int get_pos(maze_t *maze, int head, char direction)
 {
 	switch (direction) {
 	case RIGHT:
@@ -24,7 +24,7 @@ int get_new_pos(maze_t *maze, int head, char direction)
 	return (-1);
 }
 
-bool head_can_move(int head, maze_t *maze, char direction)
+bool can_move(maze_t *maze, int head, char direction)
 {
 	switch (direction) {
 	case RIGHT:
@@ -32,7 +32,7 @@ bool head_can_move(int head, maze_t *maze, char direction)
 			return (maze->str[head + 1] == '*');
 		return (false);
 	case BOT:
-		if (head >= (maze->max.x + 1) * (maze->max.y - 1))
+		if (head < (maze->max.x + 1) * (maze->max.y - 1))
 			return (maze->str[head + maze->max.x + 1] == '*');
 		return (false);
 	case LEFT:
@@ -40,21 +40,28 @@ bool head_can_move(int head, maze_t *maze, char direction)
 			return (maze->str[head - 1] == '*');
 		return (false);
 	case TOP:
-		if (head < maze->max.x)
-			return (maze->str[head - maze->max.x - 1]);
+		if (head >= maze->max.x)
+			return (maze->str[head - maze->max.x - 1] == '*');
 		return (false);
 	}
 	return (false);
 }
 
-bool solving(maze_t *maze, int head)
+bool solve(maze_t *maze, int head)
 {
 	maze->str[head] = 'o';
 	if (head == maze->size - 1)
 		return (true);
-	for (int i = 0; i < 4; i++)
-		if (head_can_move(head, maze, i) && get_new_pos(maze, head, i))
+	for (char i = 0; i < 4; i++)
+		if (can_move(maze, head, i) && solve(maze, get_pos(maze, head, i)))
 			return (true);
 	maze->str[head] = '*';
 	return (false);
+}
+
+bool solve_maze(maze_t *maze)
+{
+	if (maze->str[0] != '*' || maze->str[maze->size - 1] != '*')
+		return (false);
+	return (solve(maze, 0));
 }

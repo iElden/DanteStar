@@ -1,0 +1,9 @@
+[
+  [
+    "tests/maze1",
+    0,
+"o**X*X***\noX*X*X*X*\noX***X*X*\noXXX*X*X*\noooX***X*\n*XoXXXXX*\n*XoX***X*\n*XoXXX*XX\n*Xooooooo"
+,
+    "Maze 1"
+  ]
+]
