@@ -71,7 +71,7 @@ void display_map(Maze *maze)
 		place_bottom(str, maze);
 	for (int i = maze->real.x; i < size; i += maze->real.x + 1)
 		str[i] = '\n';
-	if (maze->real.x > 1)
+	if (maze->real.x > 1 && maze->real.y % 2 == 0)
 		str[size - 3] = (maze->real.y % 2 == 0) ? 'X' : '*';
 	str[size - 2] = '*';
 	write(1, str, size - 1);

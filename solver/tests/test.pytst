@@ -2,8 +2,31 @@
   [
     "tests/maze1",
     0,
-"o**X*X***\noX*X*X*X*\noX***X*X*\noXXX*X*X*\noooX***X*\n*XoXXXXX*\n*XoX***X*\n*XoXXX*XX\n*Xooooooo"
-,
+    "o**X*X***\noX*X*X*X*\noX***X*X*\noXXX*X*X*\noooX***X*\n*XoXXXXX*\n*XoX***X*\n*XoXXX*XX\n*Xooooooo",
     "Maze 1"
+  ],
+  [
+    "tests/no_exit",
+    0,
+    "no solution found",
+    "No exit"
+  ],
+    [
+    "tests/no_start",
+    0,
+    "no solution found",
+    "No start"
+  ],
+  [
+    "tests/unsolvable_maze",
+    0,
+    "no solution found",
+    "Unsolvable Maze"
+  ],
+  [
+    "tests/invalid_char",
+    84,
+    "",
+    "Invalid char in maze"
   ]
 ]
