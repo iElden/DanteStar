@@ -12,12 +12,13 @@
 #include "structs.h"
 
 bool error_handling(int ac, char **av);
-bool init_struct(Maze *maze, char **av);
-void display_map(Maze *maze);
-void create_maze(Maze *maze);
-void dig(Maze *maze, int head, char direction, bool recursive);
-int move_head(Maze *maze, int head, char direction);
-int find_new_room(Maze *maze, char *direction);
-char get_random_direction(Maze *maze, int head);
+bool init_struct(maze_t *maze, char **av);
+void display_map(maze_t *maze);
+void create_maze(maze_t *maze);
+void dig(maze_t *maze, int head, char direction, bool recursive);
+int move_head(maze_t *maze, int head, char direction);
+int find_new_room(maze_t *maze, char *direction);
+char get_random_direction(maze_t *maze, int head);
+void destroy(maze_t *maze);
 
 #endif

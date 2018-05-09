@@ -9,7 +9,7 @@
 #include "macro.h"
 #include <stdlib.h>
 
-int move_head(Maze *maze, int head, char direction)
+int move_head(maze_t *maze, int head, char direction)
 {
 	switch (direction) {
 	case (TOP):
@@ -24,7 +24,7 @@ int move_head(Maze *maze, int head, char direction)
 	return (-1);
 }
 
-char get_random_direction(Maze *maze, int head)
+char get_random_direction(maze_t *maze, int head)
 {
 	int len = 0;
 	int list[4];
@@ -41,7 +41,7 @@ char get_random_direction(Maze *maze, int head)
 	return (len ? list[rand() % len] : 0);
 }
 
-void dig(Maze *maze, int coord, char direction, bool dig_forward)
+void dig(maze_t *maze, int coord, char direction, bool dig_forward)
 {
 	if (!IS_DIGGED(maze->ar[coord], direction))
 		maze->ar[coord] += direction;

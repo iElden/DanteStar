@@ -12,7 +12,7 @@
 
 int main(int ac, char **av)
 {
-	Maze maze;
+	maze_t maze;
 
 	if (!error_handling(ac, av))
 		return (EXIT_ERROR);
