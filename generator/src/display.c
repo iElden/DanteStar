@@ -77,4 +77,5 @@ void display_map(Maze *maze)
 		str[maze->max.x + 4] = '*';
 	str[size - 2] = '*';
 	write(1, str, size - 1);
+	free(str);
 }
