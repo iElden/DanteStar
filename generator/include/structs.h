@@ -21,6 +21,7 @@ struct maze {
 	short *ar;
 	Coord max;
 	Coord real;
+	bool perfect;
 };
 
 #endif

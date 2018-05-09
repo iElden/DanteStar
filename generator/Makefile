@@ -17,7 +17,7 @@ OBJ =		$(SRC:%.c=%.o)
 
 INC =		-I ./include
 
-CFLAGS =	$(INC) -W -Wall -Wextra -Wshadow -g
+CFLAGS =	$(INC) -W -Wall -Wextra -Wshadow
 
 NAME =		generator
 
