@@ -11,13 +11,13 @@
 #include "structs.h"
 #include "macro.h"
 
-int destroy(Maze *maze)
+int destroy(maze_t *maze)
 {
 	free(maze->ar);
 	return (EXIT_ERROR);
 }
 
-bool init_struct(Maze *maze, char **av)
+bool init_struct(maze_t *maze, char **av)
 {
 	int x = atoi(av[1]);
 	int y = atoi(av[2]);

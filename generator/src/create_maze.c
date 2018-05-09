@@ -11,7 +11,7 @@
 #include "structs.h"
 #include "functions.h"
 
-void create_maze(Maze *maze)
+void create_maze(maze_t *maze)
 {
 	int head = rand() % (maze->max.y * maze->max.x);
 	char direction;

@@ -28,5 +28,11 @@
     84,
     "",
     "Invalid char in maze"
+  ],
+  [
+    "tests/evil_maze",
+    0,
+    "oXoooooo\noXoXXXXo\nooo***Xo\nXX*XX*Xo\nXX*XX*Xo\nXX****Xo\nXXXXXXXo",
+    "Evil maze"
   ]
 ]

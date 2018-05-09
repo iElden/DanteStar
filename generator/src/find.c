@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char get_random_room(Maze *maze, int head)
+char get_random_room(maze_t *maze, int head)
 {
 	int len = 0;
 	int list[4];
@@ -29,7 +29,7 @@ char get_random_room(Maze *maze, int head)
 	return (len ? list[rand() % len] : 0);
 }
 
-int find_new_room(Maze *maze, char *direction)
+int find_new_room(maze_t *maze, char *direction)
 {
 	static int start = 0;
 

@@ -10,17 +10,17 @@
 
 #include <stdbool.h>
 
-typedef struct coord Coord;
+typedef struct coord coord_t;
 struct coord {
 	int x;
 	int y;
 };
 
-typedef struct maze Maze;
+typedef struct maze maze_t;
 struct maze {
 	short *ar;
-	Coord max;
-	Coord real;
+	coord_t max;
+	coord_t real;
 	bool perfect;
 };
 

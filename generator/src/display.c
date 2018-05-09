@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void place_even_walls(Maze *maze, char *str)
+void place_even_walls(maze_t *maze, char *str)
 {
 	int real = maze->real.x;
 	int lb_pos = (maze->real.x + 1) * (maze->real.y);
@@ -26,7 +26,7 @@ void place_even_walls(Maze *maze, char *str)
 	}
 }
 
-void place_bottom(char *str, Maze *maze)
+void place_bottom(char *str, maze_t *maze)
 {
 	int size = (maze->real.x + 1) * maze->real.y;
 
@@ -38,7 +38,7 @@ void place_bottom(char *str, Maze *maze)
 	}
 }
 
-void fill_maze(Maze *maze, char *str, int lb_pos)
+void fill_maze(maze_t *maze, char *str, int lb_pos)
 {
 	int j = 0;
 
@@ -55,7 +55,7 @@ void fill_maze(Maze *maze, char *str, int lb_pos)
 
 }
 
-void display_map(Maze *maze)
+void display_map(maze_t *maze)
 {
 	int size = (maze->real.x + 1) * (maze->real.y);
 	char *str = malloc(size);
