@@ -28,8 +28,15 @@ int get_number_of_line(char *str)
 
 bool map_is_valid(maze_t *maze)
 {
-	(void) maze;
-	return (true);
+	int i = 0;
+	char *m = maze->str;
+
+	while (maze->str[i] != '\0') {
+		if (m[i] != '*' && m[i] != 'X' && m[i] != 'o' && m[i] != '\n')
+			return false;
+		i++;
+	}
+	return true;
 }
 
 bool parse_file(maze_t *maze)
