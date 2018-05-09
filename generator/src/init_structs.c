@@ -32,6 +32,10 @@ bool init_struct(Maze *maze, char **av)
 	if (!maze->ar)
 		return (false);
 	memset(maze->ar, 0, x * y * sizeof(short));
+	if (av[3] && strcmp(av[3], "perfect") == 0)
+		maze->perfect = true;
+	else
+		maze->perfect = false;
 	srand((unsigned long) maze->ar);
 	return (true);
 }

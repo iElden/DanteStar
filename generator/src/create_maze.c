@@ -25,7 +25,7 @@ void create_maze(Maze *maze)
 		}
 		head = find_new_room(maze, &direction);
 		if (head == -1)
-			return;
+			break;
 		dig(maze, head, direction, true);
 	}
 }

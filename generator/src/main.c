@@ -20,5 +20,6 @@ int main(int ac, char **av)
 		return (EXIT_ERROR);
 	create_maze(&maze);
 	display_map(&maze);
+	destroy(&maze);
 	return (0);
 }
