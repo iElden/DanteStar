@@ -28,14 +28,22 @@ int get_number_of_line(char *str)
 
 bool map_is_valid(maze_t *maze)
 {
-	int i = 0;
+	int j = 0;
 	char *m = maze->str;
 
-	while (maze->str[i] != '\0') {
-		if (m[i] != '*' && m[i] != 'X' && m[i] != 'o' && m[i] != '\n')
+	while (maze->str[j] != '\0') {
+		if (m[j] != '*' && m[j] != 'X' && m[j] != 'o' && m[j] != '\n')
 			return false;
-		i++;
+		j++;
 	}
+	j = 0;
+	for (int i = 0; maze->str[i]; i++)
+		if (maze->str[i] == '\n' && j != maze->max.x)
+			return (false);
+		else if (maze->str[i] == '\n')
+			j = 0;
+		else
+			j++;
 	return true;
 }
 
