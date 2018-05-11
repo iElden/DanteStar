@@ -73,8 +73,8 @@ void display_map(maze_t *maze)
 		str[i] = '\n';
 	if (maze->real.x > 1 && maze->real.y % 2 == 0)
 		str[size - 3] = (maze->real.y % 2 == 0) ? 'X' : '*';
-	if (!maze->perfect && maze->max.x > 1 && maze->max.y > 1)
-		str[maze->max.x + 4] = '*';
+	if (!maze->perfect && maze->real.x > 1 && maze->real.y > 1)
+		str[maze->real.x + 2] = '*';
 	str[size - 2] = '*';
 	write(1, str, size - 1);
 	free(str);
