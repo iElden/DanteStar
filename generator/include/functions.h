@@ -20,5 +20,6 @@ int move_head(maze_t *maze, int head, char direction);
 int find_new_room(maze_t *maze, char *direction);
 char get_random_direction(maze_t *maze, int head);
 void destroy(maze_t *maze);
+void make_maze_harder(maze_t *maze, char *str, int size);
 
 #endif

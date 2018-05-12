@@ -76,6 +76,7 @@ void display_map(maze_t *maze)
 	if (!maze->perfect && maze->real.x > 1 && maze->real.y > 1)
 		str[maze->real.x + 2] = '*';
 	str[size - 2] = '*';
+	make_maze_harder(maze, str, size);
 	write(1, str, size - 1);
 	free(str);
 }

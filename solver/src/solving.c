@@ -49,7 +49,7 @@ bool move(maze_t *maze, int head, char direction)
 
 bool solve(maze_t *maze, int head)
 {
-	maze->str[head] = 'o'; 
+	maze->str[head] = 'o';
 	if (head == maze->size - 1)
 		return (true);
 	for (char i = 0; i < 4; i++)

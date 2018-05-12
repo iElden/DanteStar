@@ -12,6 +12,7 @@ SRC =		src/main.c \
 		src/create_maze.c \
 		src/dig.c \
 		src/find.c \
+		src/make_maze_harder.c
 
 OBJ =		$(SRC:%.c=%.o)
 
