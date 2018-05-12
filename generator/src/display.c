@@ -42,6 +42,7 @@ void fill_maze(maze_t *maze, char *str, int lb_pos)
 {
 	int j = 0;
 
+	memset(str, 'X', (lb_pos - 1));
 	for (int i = 0; i < lb_pos; i += 2) {
 		if ((i % ((maze->real.x + 1) * 2)) / maze->real.x)
 			continue;
@@ -62,9 +63,8 @@ void display_map(maze_t *maze)
 
 	if (str == NULL)
 		return;
-	memset(str, 'X', (size - 1));
-	str[size - 1] = '\0';
 	fill_maze(maze, str, size);
+	str[size - 1] = '\0';
 	if (maze->real.x % 2 == 0)
 		place_even_walls(maze, str);
 	if (maze->real.y % 2 == 0)

@@ -10,7 +10,7 @@
 char walls_near(maze_t *maze, char *str, int i)
 {
 	char total = 4;
-	
+
 	if ((i + 2) % (maze->real.x + 1) != 0)
 		total -= (str[i + 1] == '*');
 	if (i < (maze->real.x + 1) * (maze->real.y - 1))
